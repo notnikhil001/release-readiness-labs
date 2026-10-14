@@ -22,11 +22,11 @@ jobs:
 deploy-production:
 runs-on: ubuntu-latest
 steps:
-- name: Checkout code
-uses: actions/checkout@v4
+  - name: Checkout code
+    uses: actions/checkout@v4
 
-- name: Deploy to production
-run: |
-  chmod +x scripts/deploy.sh
-  ./scripts/deploy.sh
+  - name: Deploy to production
+    run: |
+    chmod +x scripts/deploy.sh
+    ./scripts/deploy.sh
   
