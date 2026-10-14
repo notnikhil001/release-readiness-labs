@@ -15,18 +15,17 @@ jobs:
 
       - name: Run Tests
         run: |
-          echo "Running validation tests"
+          echo "Running validation tests..."
           npm install --prefix app
           npm test --prefix app
 
-deploy-production:
-runs-on: ubuntu-latest
-steps:
-  - name: Checkout code
-    uses: actions/checkout@v4
+  deploy-production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-  - name: Deploy to production
-    run: |
-    chmod +x scripts/deploy.sh
-    ./scripts/deploy.sh
-  
+      - name: Deploy to Production
+        run: |
+          chmod +x scripts/deploy.sh
+          ./scripts/deploy.sh
